@@ -1,0 +1,63 @@
+=> Booting WEBrick
+=> Rails 4.2.0 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+
+
+Started GET "/" for ::1 at 2015-01-15 00:50:24 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 28ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2015-01-15 00:50:38 +0800
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 964ms (Views: 955.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-15 00:50:39 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-15 00:50:39 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-15 00:50:39 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-15 00:50:39 +0800
+
+
+Started GET "/assets/application-800bda695d51183bf646ad022f9ca22a.css?body=1" for ::1 at 2015-01-15 00:50:39 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-15 00:50:39 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-15 00:50:39 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-15 00:50:39 +0800
+
+
+Started GET "/assets/tasks-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-15 00:50:39 +0800
+
+
+Started GET "/assets/application-18f10afd70767e0049304380ce89b979.js?body=1" for ::1 at 2015-01-15 00:50:39 +0800
+
+
+Started GET "/tasks/1" for ::1 at 2015-01-15 00:50:41 +0800
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tasks/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 103ms (Views: 57.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks" for ::1 at 2015-01-15 00:50:50 +0800
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.7ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 55ms (Views: 53.8ms | ActiveRecord: 0.7ms)
