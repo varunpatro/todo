@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  include TasksHelper
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
@@ -26,7 +27,7 @@ class TasksController < ApplicationController
   def create
     tag_name = params.require(:task).permit(:tag)["tag"]
     @task = Task.new(task_params)
-    @tag = Tag.create(name: tag_name, task_id: Task.last.id + 1)
+    create_multiple_tags(tag_name, (Task.last.id + 1))
 
     respond_to do |format|
       if @task.save
