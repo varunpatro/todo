@@ -1,7 +1,4 @@
 class Task < ActiveRecord::Base
+	has_many :tags, dependent: :destroy
 	belongs_to :list
-	has_many :tags
-
-	validates :name, presence: true
-	validates :list_id, presence: true, numericality: { only_integer: true}
 end

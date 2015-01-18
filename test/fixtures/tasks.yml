@@ -2,6 +2,8 @@
 
 one:
   name: MyString
+  list_id: 1
 
 two:
   name: MyString
+  list_id: 1

@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Belongs to List:</strong>
-  <%= link_to @task.list.name, @task.list %>
+  <strong>List:</strong>
+  <%= @task.list_id %>
 </p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |

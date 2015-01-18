@@ -24,7 +24,9 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
+    tag_name = params.require(:task).permit(:tag)["tag"]
     @task = Task.new(task_params)
+    @tag = Tag.create(name: tag_name, task_id: Task.last.id + 1)
 
     respond_to do |format|
       if @task.save
@@ -69,6 +71,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name)
+      params.require(:task).permit(:name, :list_id, :tag)
     end
 end
