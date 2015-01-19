@@ -10,5 +10,15 @@
   <%= @tag.task_id %>
 </p>
 
+<p>
+  <strong>Tasks:</strong>
+	<ul>
+	  	<% @tasks.each do |t| %>
+	  	<li><%= link_to t.task.name, task_path(t) %></li>
+	  	<% end %>
+	</ul>
+
+</p>
+
 <%= link_to 'Edit', edit_tag_path(@tag) %> |
 <%= link_to 'Back', tags_path %>
