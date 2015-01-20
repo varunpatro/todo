@@ -1,14 +1,8 @@
 class TasksController < ApplicationController
   include TasksHelper
+  before_action :valid_auth
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate
 
-  def authenticate
-    unless session[:logged_in?]
-      flash[:error] = "You must login to access your tasks"
-      redirect_to login_url
-    end
-  end
 
   # GET /tasks
   # GET /tasks.json
@@ -90,10 +84,21 @@ class TasksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_task
       @task = Task.find(params[:id])
+      if @task.list.user_id != @user.id
+        redirect_to tasks_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
       params.require(:task).permit(:name, :list_id, :tag)
+    end
+
+    def valid_auth
+      if session[:logged_in?]
+        @user = User.find(session[:user_id])
+      else
+        redirect_to users_login_path notice: "You must login to access your lists"
+      end
     end
 end

@@ -14,6 +14,8 @@ class UsersController < ApplicationController
       if (@user.password == upass)
         session[:logged_in?] = true
         session[:user] = @user
+        session[:user_id] = @user.id
+        session[:user_name] = @user.name
         redirect_to lists_path
       else
         redirect_to users_login_path, notice: "Incorrect Password."

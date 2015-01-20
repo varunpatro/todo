@@ -22,12 +22,21 @@
     <%= select("task", "list_id", List.all.collect { |l| [l.name, l.id ] }) %>
   </div>
 
-  
-
   <div class="field">
     <%= f.label :tag %><br>
     <%= f.text_field :tag %>
   </div>
+
+  <div class="field">
+    <%= check_box_tag(:starred?) %>
+    <%= label_tag(:starred?, "Star") %>
+    <%= check_box_tag(:archived?) %>
+    <%= label_tag(:archived?, "Archive") %>
+    <%= check_box_tag(:done?) %>
+    <%= label_tag(:done?, "Done") %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
