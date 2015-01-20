@@ -1,6 +1,31 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  def login
+  end
+
+  def auth
+    uname = user_params["username"]
+    upass = user_params["password"]
+
+    @users = User.where(username: uname)
+    if (@users.count > 0)
+      @user = @users.first
+      if (@user.password == upass)
+        session[:logged_in?] = true
+        session[:user] = @user
+        redirect_to lists_path
+      else
+        redirect_to users_login_path, notice: "Incorrect Password."
+      end
+    else
+      redirect_to users_login_path, notice: "Incorrect Username."
+    end
+  end
+
+  def signup
+  end
+
   # GET /users
   # GET /users.json
   def index
@@ -69,6 +94,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name)
+      params.require(:user).permit(:name, :username, :password)
     end
 end

@@ -1,6 +1,14 @@
 class TasksController < ApplicationController
   include TasksHelper
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate
+
+  def authenticate
+    unless session[:logged_in?]
+      flash[:error] = "You must login to access your tasks"
+      redirect_to login_url
+    end
+  end
 
   # GET /tasks
   # GET /tasks.json
