@@ -1,3 +1,6 @@
+<p id="notice"><%= notice %></p>
+
+
 <%= form_for :user do |f| %>
 
   <div class="field">
@@ -7,7 +10,7 @@
 
   <div class="field">
     <%= f.label :Password %><br>
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
   </div>
 
 
