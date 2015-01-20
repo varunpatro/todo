@@ -1,5 +1,5 @@
 class AddStatusToTasks < ActiveRecord::Migration
   def change
-  	add_column :tasks, :done_status, :boolean, default: false
+  	add_column :tasks, :done?, :boolean, default: false
   end
 end
