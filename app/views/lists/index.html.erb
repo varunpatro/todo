@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <% if session[:logged_in?] %>
-<p>User logged in: <%= session[:user] %> </p>
+<p>Welcome <%= session[:user_name] %>!</p>
 <% end %>
 
 <h1>Listing Lists</h1>

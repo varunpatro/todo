@@ -98,7 +98,7 @@ class TasksController < ApplicationController
       if session[:logged_in?]
         @user = User.find(session[:user_id])
       else
-        redirect_to users_login_path notice: "You must login to access your lists"
+        redirect_to users_login_path, notice: "You must login to access your tasks."
       end
     end
 end

@@ -28,6 +28,11 @@ class UsersController < ApplicationController
   def signup
   end
 
+  def logout
+    reset_session
+    redirect_to users_login_path, notice: "You have successfully logged out."
+  end
+
   # GET /users
   # GET /users.json
   def index
