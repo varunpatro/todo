@@ -10,15 +10,24 @@
       </ul>
     </div>
   <% end %>
+  <%= @task.list.name %>
 
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :list_id %><br>
-    <%= f.number_field :list_id %>
+    <% supp = "supp".to_sym %>
+    <%= f.label :list %><br>
+    <%= f.text_field :list, value: @task.list.name %>
   </div>
+
+  <div class="field">
+    <% supp = "supp".to_sym %>
+    <%= f.label :list %><br>
+    <%= f.text_field :list, value: @task.list.name %>
+  </div>
+  
   <div class="field">
     <%= f.label :tag %><br>
     <%= f.text_field :tag %>

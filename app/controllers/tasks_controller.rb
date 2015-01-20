@@ -16,6 +16,7 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
+    @lists = List.all
   end
 
   # GET /tasks/1/edit
@@ -25,12 +26,17 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    tag_name = params.require(:task).permit(:tag)["tag"]
-    @task = Task.new(task_params)
-    create_multiple_tags(tag_name, (Task.last.id + 1))
+    task_name = task_params["name"];
+    tag_name = task_params["tag"];
+    list_name = task_params["list"];
+    l_id = lname_to_lid(list_name);
 
+    @task = Task.new(name: task_name, list_id: l_id, tag: tag_name)
+    
     respond_to do |format|
       if @task.save
+        create_multiple_tags(tag_name, @task.id)
+
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
@@ -43,8 +49,16 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
   def update
+    task_name = task_params["name"];
+    tag_name = task_params["tag"];
+    list_name = task_params["list"];
+    l_id = lname_to_lid(list_name);
+    @task.tags.each { |t| t.delete}
+
     respond_to do |format|
-      if @task.update(task_params)
+      if @task.update(name: task_name, list_id: l_id)
+        create_multiple_tags(tag_name, @task.id)
+
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
       else
@@ -72,6 +86,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :list_id, :tag)
+      params.require(:task).permit(:name, :list, :tag)
     end
 end

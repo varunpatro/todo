@@ -6,4 +6,11 @@ module TasksHelper
 			Tag.create(name: t, task_id: _task_id)
 		end
 	end
+
+	def lname_to_lid( lname )
+		lists = List.where(name: lname)
+		if (lists.count > 0) then
+			return lists.first.id
+		end
+	end
 end
