@@ -10,24 +10,20 @@
       </ul>
     </div>
   <% end %>
-  <%= @task.list.name %>
+  
 
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <% supp = "supp".to_sym %>
-    <%= f.label :list %><br>
-    <%= f.text_field :list, value: @task.list.name %>
-  </div>
 
   <div class="field">
-    <% supp = "supp".to_sym %>
-    <%= f.label :list %><br>
-    <%= f.text_field :list, value: @task.list.name %>
+    <%= f.label :list_id %><br>
+    <%= select("task", "list_id", List.all.collect { |l| [l.name, l.id ] }) %>
   </div>
+
   
+
   <div class="field">
     <%= f.label :tag %><br>
     <%= f.text_field :tag %>

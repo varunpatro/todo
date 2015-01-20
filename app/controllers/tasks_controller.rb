@@ -28,10 +28,10 @@ class TasksController < ApplicationController
   def create
     task_name = task_params["name"];
     tag_name = task_params["tag"];
-    list_name = task_params["list"];
-    l_id = lname_to_lid(list_name);
+    list_id = task_params["list_id"];
+    # l_id = lname_to_lid(list_name);
 
-    @task = Task.new(name: task_name, list_id: l_id, tag: tag_name)
+    @task = Task.new(name: task_name, list_id: list_id, tag: tag_name)
     
     respond_to do |format|
       if @task.save
@@ -51,12 +51,12 @@ class TasksController < ApplicationController
   def update
     task_name = task_params["name"];
     tag_name = task_params["tag"];
-    list_name = task_params["list"];
-    l_id = lname_to_lid(list_name);
+    list_id = task_params["list_id"];
+    # l_id = lname_to_lid(list_name);
     @task.tags.each { |t| t.delete}
 
     respond_to do |format|
-      if @task.update(name: task_name, list_id: l_id)
+      if @task.update(name: task_name, list_id: list_id, tag: tag_name)
         create_multiple_tags(tag_name, @task.id)
 
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
@@ -86,6 +86,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :list, :tag)
+      params.require(:task).permit(:name, :list_id, :tag)
     end
 end
