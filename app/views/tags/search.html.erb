@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Search Tags</h1>
+
+<table>
+  <thead>
+    <tr>
+    <% if (@tasks.count > 0) %>
+      <th>Tasks with tag: '<%= @tag_name %>'</th>
+      <% else %>
+      <th>No tasks with tag: '<%= @tag_name %>'</th>
+      <% end %>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <% if (task.list.user_id == session[:user_id]) %>
+      <tr>  
+        <td><%= task.name %></td>
+        <td><%= link_to task.list.name, task.list %></td>
+        <td><%= link_to 'Show', task %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tag', new_tag_path %>

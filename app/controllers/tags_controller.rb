@@ -8,6 +8,11 @@ class TagsController < ApplicationController
     @tags = Tag.all
   end
 
+  def search
+  	@tag_name = params[:tag_name]
+  	@tasks = Tag.where(name: @tag_name)
+  end
+
   # GET /tags/1
   # GET /tags/1.json
   def show

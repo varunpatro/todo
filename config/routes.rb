@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'users/logout' => 'users#logout'
 
+  get 'tags/search/:tag_name' => 'tags#search'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
