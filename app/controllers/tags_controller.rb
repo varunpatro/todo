@@ -10,7 +10,7 @@ class TagsController < ApplicationController
 
   def search
   	@tag_name = params[:tag_name]
-  	@tasks = Tag.where(name: @tag_name)
+  	@tags = Tag.where(name: @tag_name)
   end
 
   # GET /tags/1
