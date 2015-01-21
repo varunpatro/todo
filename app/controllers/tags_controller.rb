@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+  before_action :valid_auth
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
 
   # GET /tags
@@ -71,5 +72,13 @@ class TagsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tag_params
       params.require(:tag).permit(:name, :task_id)
+    end
+
+    def valid_auth
+      if session[:logged_in?]
+        @user = User.find(session[:user_id])
+      else
+        redirect_to users_login_path, notice: "You must login to access your tasks."
+      end
     end
 end
