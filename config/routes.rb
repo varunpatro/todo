@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   resources :tasks
 
-  resources :lists do 
-    # resources :tasks
-  end
+  resources :lists
 
   resources :tags
 
