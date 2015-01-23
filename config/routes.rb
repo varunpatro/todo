@@ -13,6 +13,14 @@ Rails.application.routes.draw do
 
   get 'tags/search/:tag_name' => 'tags#search'
 
+  get 'tasks/:done' => 'tasks#index' 
+
+  get 'tasks/starred' => 'tasks#index'
+
+  get 'tasks/archived' => 'tasks#index'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

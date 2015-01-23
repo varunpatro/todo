@@ -15,14 +15,13 @@ module TasksHelper
   end
 
   def task_stat_helper( params )
-    # session[:test] = ""
+  	# this helper is no longer needed
     task_stats = {}
 
     task_stats["isDone"] = params['isDone'].present?
     task_stats["isStarred"] = params['isStarred'].present?
     task_stats["isArchived"] = params['isArchived'].present?
 
-    session[:test] = task_stats.to_s
     return task_stats
   end
 end

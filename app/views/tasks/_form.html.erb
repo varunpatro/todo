@@ -28,14 +28,16 @@
   </div>
 
   <div class="field">
-    <%= check_box_tag('task[isDone]', :true) %>
-    <%= label_tag('task[isDone]', "Done") %>
-    <%= check_box_tag('task[isStarred]', :true) %>
-    <%= label_tag('task[isStarred]', "Star") %>
-    <%= check_box_tag('task[isArchived]', :true) %>
-    <%= label_tag('task[isArchived]', "Archive") %>
-    
+    <%= f.label :Done %>
+    <%= f.check_box :isDone %>
+
+    <%= f.label :Star %>
+    <%= f.check_box :isStarred %>
+
+    <%= f.label :Archive %>
+    <%= f.check_box :isArchived %>
   </div>
+
 
 
   <div class="actions">

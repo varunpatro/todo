@@ -2,7 +2,6 @@ class TasksController < ApplicationController
   include TasksHelper
   before_action :valid_auth
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  # before_action :tasks_stat, only: [:create, :update]
 
 
 
@@ -10,6 +9,9 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
+    if params[:done]
+      session[:msg] = "done"
+    end
     @tasks = Task.all
   end
 
@@ -37,7 +39,6 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.save
         create_multiple_tags(task_params["tag"], @task.id)
-        # @task.update(tasks_stat)
 
         # format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.html { redirect_to @task, notice: task_params }
@@ -52,13 +53,11 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
   def update
-    # l_id = lname_to_lid(list_name);
     @task.tags.each { |t| t.delete}
 
     respond_to do |format|
       if @task.update(task_params)
         create_multiple_tags(task_params["tag"], @task.id)
-        @task.update(task_stats)
 
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
@@ -99,10 +98,6 @@ class TasksController < ApplicationController
       else
         redirect_to users_login_path, notice: "You must login to access your tasks."
       end
-    end
-
-    def task_stats
-      return task_stat_helper(task_params)
     end
 
 end
