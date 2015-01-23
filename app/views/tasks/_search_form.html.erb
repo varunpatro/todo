@@ -1,0 +1,28 @@
+<%= form_tag('/tasks/search_results', method: "get", id: "search_form") do %>
+
+  <div class="field">
+    <%= label_tag(:tagSearch, "Search Tasks with Tag") %>
+    <%= check_box_tag(:tagSearch) %>  
+
+    <%= label_tag(:tag, "Tag:") %>
+    <%= text_field_tag(:tag) %>
+  </div>
+
+  <div class="field">
+    <%= label_tag(:isStarred, "Search Starred Tasks") %>
+    <%= check_box_tag(:isStarred) %>  
+  </div>
+
+  <div class="field">
+    <%= label_tag(:isArchived, "Search Archived Tasks") %>
+    <%= check_box_tag(:isArchived) %>  
+  </div>
+
+  <div class="field">
+    <%= label_tag(:isDone, "Search Done Tasks") %>
+    <%= check_box_tag(:isDone) %>
+  </div>
+
+
+  <%= button_tag("Search", type: 'button', id: 'search_button') %>
+<% end %>

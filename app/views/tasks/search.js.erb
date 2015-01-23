@@ -1,0 +1,15 @@
+$( "#search_button" ).click(function() {
+  search();
+});
+
+function search(){
+	form = $('#search_form');
+    var url = form.attr("action");
+    var formData = {};
+    $(form).find("input[name]").each(function (index, node) {
+        formData[node.name] = node.value;
+    });
+    $.get(url, formData).done(function (data) {
+        $('.search_results').append(data);
+    });
+}

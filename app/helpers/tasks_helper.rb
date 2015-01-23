@@ -28,8 +28,6 @@ module TasksHelper
   def search_helper( params )
     search_query = {}
 
-    session[:message] = params
-
     if params["isDone"].present?
       search_query["isDone"] = true 
     end
@@ -42,13 +40,9 @@ module TasksHelper
       search_query["isArchived"] = true
     end
 
-    session[:q] = search_query
 
     if params["tagSearch"].present?
       tag = params["tag"].gsub(" ", "")
-      session[:yes1] = search_query
-      session[:yes2] = search_str
-      session[:yes3] = "Task.where(#{search_query}).joins(:tags).where('tags.name = ?', #{tag})"
       return Task.where(search_query).joins(:tags).where('tags.name = ?', tag)
     else
       session[:no] = search_query
