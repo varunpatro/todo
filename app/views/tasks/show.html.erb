@@ -16,6 +16,13 @@
 	  	<% @task.tags.each do |t| %>
 	  	<li><%= link_to t.name, tag_path(t) %></li>
 	  	<% end %>
+
+	  	<br><div class="task_stats">
+		  	Archived: <%= if @task.isArchived then "YES" else "NO" end %><br>
+		  	Done: <%= if @task.isDone then "YES" else "NO" end %><br>
+		  	Starred: <%= if @task.isStarred then "YES" else "NO" end %>
+	  	</div>
+
 	</ul>
 
 </p>
