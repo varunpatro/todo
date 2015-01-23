@@ -46,14 +46,17 @@ module TasksHelper
 
     if params["tagSearch"].present?
       tag = params["tag"].gsub(" ", "")
-      search_str = "'tags.name = ?', \"#{tag}\""
       session[:yes1] = search_query
       session[:yes2] = search_str
-      return Task.where(search_query).joins(:tags).where(search_str)
+      session[:yes3] = "Task.where(#{search_query}).joins(:tags).where('tags.name = ?', #{tag})"
+      return Task.where(search_query).joins(:tags).where('tags.name = ?', tag)
     else
       session[:no] = search_query
       return Task.where(search_query)
     end
+
+    return Task.where(search_query)
+
   end
 
 end
