@@ -4,7 +4,12 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
 
+  def search
+  end
 
+  def search_results
+    @tasks = search_helper(params.permit(:tagSearch, :tag, :isDone, :isStarred, :isArchived))
+  end
 
   # GET /tasks
   # GET /tasks.json

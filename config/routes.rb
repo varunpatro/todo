@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :tasks
 
   resources :lists
 
@@ -11,13 +10,15 @@ Rails.application.routes.draw do
 
   get 'users/logout' => 'users#logout'
 
-  get 'tags/search/:tag_name' => 'tags#search'
+  get 'tags/search' => 'tags#search'
 
-  get 'tasks/:done' => 'tasks#index' 
+  get 'tasks/search' => 'tasks#search'
 
-  get 'tasks/starred' => 'tasks#index'
+  get 'tasks/search_results' => 'tasks#search_results'
 
-  get 'tasks/archived' => 'tasks#index'
+
+  resources :tasks
+
 
 
 

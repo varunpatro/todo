@@ -24,4 +24,36 @@ module TasksHelper
 
     return task_stats
   end
+
+  def search_helper( params )
+    search_query = {}
+
+    session[:message] = params
+
+    if params["isDone"].present?
+      search_query["isDone"] = true 
+    end
+    
+    if params["isStarred"].present?
+      search_query["isStarred"] = true 
+    end
+
+    if params["isArchived"].present?
+      search_query["isArchived"] = true
+    end
+
+    session[:q] = search_query
+
+    if params["tagSearch"].present?
+      tag = params["tag"].gsub(" ", "")
+      search_str = "'tags.name = ?', \"#{tag}\""
+      session[:yes1] = search_query
+      session[:yes2] = search_str
+      return Task.where(search_query).joins(:tags).where(search_str)
+    else
+      session[:no] = search_query
+      return Task.where(search_query)
+    end
+  end
+
 end
