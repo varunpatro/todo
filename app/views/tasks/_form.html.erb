@@ -19,7 +19,7 @@
 
   <div class="field">
     <%= f.label :list_id %><br>
-    <%= select("task", "list_id", List.all.collect { |l| [l.name, l.id ] }) %>
+    <%= select("task", "list_id", List.where("user_id = ?", @user.id).collect { |l| [l.name, l.id ] }) %>
   </div>
 
   <div class="field">
@@ -28,12 +28,13 @@
   </div>
 
   <div class="field">
-    <%= check_box_tag(:starred?) %>
-    <%= label_tag(:starred?, "Star") %>
-    <%= check_box_tag(:archived?) %>
-    <%= label_tag(:archived?, "Archive") %>
-    <%= check_box_tag(:done?) %>
-    <%= label_tag(:done?, "Done") %>
+    <%= check_box_tag('task[isDone]', :true) %>
+    <%= label_tag('task[isDone]', "Done") %>
+    <%= check_box_tag('task[isStarred]', :true) %>
+    <%= label_tag('task[isStarred]', "Star") %>
+    <%= check_box_tag('task[isArchived]', :true) %>
+    <%= label_tag('task[isArchived]', "Archive") %>
+    
   </div>
 
 

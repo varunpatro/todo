@@ -2,6 +2,9 @@ class TasksController < ApplicationController
   include TasksHelper
   before_action :valid_auth
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  # before_action :tasks_stat, only: [:create, :update]
+
+
 
 
   # GET /tasks
@@ -28,18 +31,16 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    task_name = task_params["name"];
-    tag_name = task_params["tag"];
-    list_id = task_params["list_id"];
-    # l_id = lname_to_lid(list_name);
 
-    @task = Task.new(name: task_name, list_id: list_id, tag: tag_name)
-    
+    @task = Task.new(task_params)
+
     respond_to do |format|
       if @task.save
-        create_multiple_tags(tag_name, @task.id)
+        create_multiple_tags(task_params["tag"], @task.id)
+        # @task.update(tasks_stat)
 
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
+        # format.html { redirect_to @task, notice: 'Task was successfully created.' }
+        format.html { redirect_to @task, notice: task_params }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
@@ -51,15 +52,13 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
   def update
-    task_name = task_params["name"];
-    tag_name = task_params["tag"];
-    list_id = task_params["list_id"];
     # l_id = lname_to_lid(list_name);
     @task.tags.each { |t| t.delete}
 
     respond_to do |format|
-      if @task.update(name: task_name, list_id: list_id, tag: tag_name)
-        create_multiple_tags(tag_name, @task.id)
+      if @task.update(task_params)
+        create_multiple_tags(task_params["tag"], @task.id)
+        @task.update(task_stats)
 
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
@@ -91,7 +90,7 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :list_id, :tag)
+      params.require(:task).permit(:name, :list_id, :tag, :isStarred, :isDone, :isArchived)
     end
 
     def valid_auth
@@ -101,4 +100,9 @@ class TasksController < ApplicationController
         redirect_to users_login_path, notice: "You must login to access your tasks."
       end
     end
+
+    def task_stats
+      return task_stat_helper(task_params)
+    end
+
 end
