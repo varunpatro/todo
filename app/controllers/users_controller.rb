@@ -66,18 +66,16 @@ class UsersController < ApplicationController
 
     @user = User.new(user_params)
 
-    # if (user_params["password"] != params[:repass])
-    #   respond_to do |format|
-    #     format.html { render :new }
-    #     format.json { render json: @user.errors, status: :unprocessable_entity }
-    #   end
-    #   return
-    # end
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to lists_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
+
+        session[:logged_in?] = true
+        session[:user] = @user
+        session[:user_id] = @user.id
+        session[:user_name] = @user.name
+        
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
