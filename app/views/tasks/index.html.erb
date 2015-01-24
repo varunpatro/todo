@@ -12,6 +12,7 @@
   </thead>
 
   <tbody>
+  <% if (@tasks.count > 0) %>
     <% @tasks.each do |task| %>
       <% if (task.list.user_id == session[:user_id]) %>
       <tr>  
@@ -23,6 +24,9 @@
       </tr>
       <% end %>
     <% end %>
+  <% else %>
+    <p>No tasks to show! Make a new one.</p>
+  <% end %>
   </tbody>
 </table>
 

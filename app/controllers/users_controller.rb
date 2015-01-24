@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    # should not visit this page but if it does then redirect to users's lists
+    # should not visit this page but if it does then redirect to users's tasks
     redirect_to lists_path
   end
 

@@ -8,8 +8,6 @@ Rails.application.routes.draw do
 
   get 'users/logout' => 'users#logout'
 
-  get 'tags/search' => 'tags#search'
-
   get 'tasks/search' => 'tasks#search'
 
   get 'tasks/search_results' => 'tasks#search_results'
@@ -34,6 +32,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+
+  root 'lists#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
