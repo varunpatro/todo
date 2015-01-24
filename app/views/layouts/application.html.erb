@@ -13,8 +13,8 @@
 	<div class="navbar-inner">
 		<ul class="nav nav-tabs">
 			<% if session[:logged_in?] %>
-				<li><a href="/lists">Lists</a></li>
-				<li><a href="/tasks">tasks</a></li>
+				<li><a href= <%= lists_path %> Lists</a></li>
+				<li><a href="/tasks">Tasks</a></li>
 				<li><a href="/tasks/search">Search Tasks</a></li>
 				<li><a href="/tags">Tags</a></li>
 
