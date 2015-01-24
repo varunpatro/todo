@@ -8,9 +8,26 @@
 </head>
 <body>
 <p id="notice"><%= notice %></p>
-<% if session[:logged_in?] %>
-<p>Welcome <%= session[:user_name] %>!</p>
-<% end %>
+
+<div class="container"><div class="navbar">
+	<div class="navbar-inner">
+		<ul class="nav nav-tabs">
+			<% if session[:logged_in?] %>
+				<li><a href="/lists">Lists</a></li>
+				<li><a href="/tasks">tasks</a></li>
+				<li><a href="/tasks/search">Search Tasks</a></li>
+				<li><a href="/tags">Tags</a></li>
+
+				<li class="pull-right"><a href="/users/logout">Logout</a></li>
+				<li class="pull-right"><a>Welcome <%= session[:user_name] %>!</a></li>
+			<% else  %>
+				<li class="pull-right"><a href="/users/login">Login</a></li>
+				<li class="pull-right"><a href="/users/signup">Sign Up</a></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+</div>
 
 <%= yield %>
 
