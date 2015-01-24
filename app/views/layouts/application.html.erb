@@ -19,7 +19,7 @@
 				<li><a href=<%= tags_path %>>Tags</a></li>
 
 				<li class="pull-right"><a href=<%= users_logout_path %>>Logout</a></li>
-				<li class="pull-right"><a>Welcome <%= session[:user_name] %>!</a></li>
+				<li class="pull-right"><a href=<%= users_path %>>Welcome <%= session[:user_name] %>!</a></li>
 			<% else  %>
 				<li class="pull-right"><a href=<%= users_login_path %>>Login</a></li>
 				<li class="pull-right"><a href=<%= users_signup_path %>>Sign Up</a></li>
