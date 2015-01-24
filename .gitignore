@@ -15,6 +15,10 @@
 /log/*
 !/log/.keep
 /tmp
+server.log
+
 
 # Ignore all buffers
 *~
+
+
