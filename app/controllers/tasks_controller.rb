@@ -15,9 +15,6 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    if params[:done]
-      session[:msg] = "done"
-    end
     @tasks = Task.all
   end
 
