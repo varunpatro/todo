@@ -13,16 +13,16 @@
 	<div class="navbar-inner">
 		<ul class="nav nav-tabs">
 			<% if session[:logged_in?] %>
-				<li><a href= <%= lists_path %> Lists</a></li>
-				<li><a href="/tasks">Tasks</a></li>
-				<li><a href="/tasks/search">Search Tasks</a></li>
-				<li><a href="/tags">Tags</a></li>
+				<li><a href=<%= lists_path %>>Lists</a></li>
+				<li><a href=<%= tasks_path %>>Tasks</a></li>
+				<li><a href=<%= tasks_search_path %>>Search Tasks</a></li>
+				<li><a href=<%= tags_path %>>Tags</a></li>
 
-				<li class="pull-right"><a href="/users/logout">Logout</a></li>
+				<li class="pull-right"><a href=<%= users_logout_path %>>Logout</a></li>
 				<li class="pull-right"><a>Welcome <%= session[:user_name] %>!</a></li>
 			<% else  %>
-				<li class="pull-right"><a href="/users/login">Login</a></li>
-				<li class="pull-right"><a href="/users/signup">Sign Up</a></li>
+				<li class="pull-right"><a href=<%= users_login_path %>>Login</a></li>
+				<li class="pull-right"><a href=<%= users_signup_path %>>Sign Up</a></li>
 			<% end %>
 		</ul>
 	</div>
