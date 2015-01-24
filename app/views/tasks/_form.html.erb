@@ -1,3 +1,4 @@
+<%= field_set_tag "New Task" do %>
 <%= form_for(@task) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
@@ -19,7 +20,11 @@
 
   <div class="field">
     <%= f.label :list_id %><br>
-    <%= select("task", "list_id", List.where("user_id = ?", @user.id).collect { |l| [l.name, l.id ] }) %>
+    <% if @list %>
+      <%= select("task", "list_id", List.where("id = ?", @list.id).collect { |l| [l.name, l.id] }) %>
+    <% else %>
+      <%= select("task", "list_id", List.where("user_id = ?", @user.id).collect { |l| [l.name, l.id ] }) %>
+    <% end %>
   </div>
 
   <div class="field">
@@ -38,9 +43,9 @@
     <%= f.check_box :isArchived %>
   </div>
 
-
-
   <div class="actions">
     <%= f.submit %>
   </div>
+
+<% end %>
 <% end %>

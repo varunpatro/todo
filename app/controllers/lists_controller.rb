@@ -7,11 +7,13 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     @lists = List.where(user_id: @user.id)
+    @list = List.new
   end
 
   # GET /lists/1
   # GET /lists/1.json
   def show
+    @task = Task.new
   end
 
   # GET /lists/new
@@ -31,7 +33,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.save
-        format.html { redirect_to @list, notice: 'List was successfully created.' }
+        format.html { redirect_to lists_path, notice: "List " + list_params["name"] + ' was successfully created.' }
         format.json { render :show, status: :created, location: @list }
       else
         format.html { render :new }

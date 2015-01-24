@@ -36,12 +36,16 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    # redirect to edit user's information page
+    @user = User.find(session[:user_id])
+    redirect_to edit_user_path(@user)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    # should not visit this page but if it does then redirect to users's lists
+    redirect_to lists_path
   end
 
   # GET /users/new
@@ -51,6 +55,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if @user.id != session[:user_id]
+      redirect_to users_path, notice: "You can't edit someone else's profile. Please edit your own."
+    end
   end
 
   # POST /users
