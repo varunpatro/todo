@@ -2,21 +2,27 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-search = ->
-  form = $("#search_form")
-  url = form.attr("action")
-  formData = {}
-  $(form).find("input[name]").each (index, node) ->
-    formData[node.name] = node.value
-    return
+$("#search_form").submit (e) ->
+  $(".search_results").html "Searching..."
+  formURL = undefined
+  postData = undefined
+  formURL = undefined
+  postData = undefined
+  postData = $(this).serializeArray()
+  formURL = $(this).attr("action")
+  $.ajax
+    url: formURL
+    type: "GET"
+    data: postData
+    success: (data, textStatus, jqXHR) ->
+      $(".search_results").html data
+      return
 
-  $.get(url, formData).done (data) ->
-    $(".search_results").html data
-    return
+    error: (jqXHR, textStatus, errorThrown) ->
+      $(".search_results").html data
+      return
 
-  return
-
-$("#search_button").click ->
-  search()
+  e.preventDefault()
+  
   return
 

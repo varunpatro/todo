@@ -9,6 +9,7 @@ class TasksController < ApplicationController
 
   def search_results
     @tasks = search_helper(params.permit(:tagSearch, :tag, :isDone, :isStarred, :isArchived))
+    render :layout => false
   end
 
   # GET /tasks
