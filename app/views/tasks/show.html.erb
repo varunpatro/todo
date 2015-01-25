@@ -13,7 +13,7 @@
   <strong>Tags:</strong>
 	<ul>
 	  	<% @task.tags.each do |t| %>
-	  	<li><%= link_to t.name, tag_path(t) %></li>
+	  	<li><%= link_to t.name+',', tag_path(t) %></li>
 	  	<% end %>
 
 	  	<br><div class="task_stats">
