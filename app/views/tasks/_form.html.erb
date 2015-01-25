@@ -1,45 +1,55 @@
-<%= field_set_tag "New Task" do %>
 <%= form_for(@task) do |f| %>
-  <% if @task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
-      <ul>
-      <% @task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :list_id %>
-    <% if @list %>
-      <%= select("task", "list_id", List.where("id = ?", @list.id).collect { |l| [l.name, l.id] }) %>
-    <% else %>
-      <%= select("task", "list_id", List.where("user_id = ?", @user.id).collect { |l| [l.name, l.id ] }) %>
+<% if @task.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+  <ul>
+    <% @task.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
     <% end %>
-
-    <%= f.label :tag %>
-    <%= f.text_field :tag %>
-
-    <%= f.label :Done %>
-    <%= f.check_box :isDone %>
-
-    <%= f.label :Star %>
-    <%= f.check_box :isStarred %>
-
-    <%= f.label :Archive %>
-    <%= f.check_box :isArchived %>
-  
-    <%= f.submit class: "btn btn-default" %>
-  </div>
-
+  </ul>
+</div>
 <% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th class="lead">Name</th>
+      <th class="lead">List</th>
+      <th class="lead">Tags</th>
+      <th class="lead">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= f.label :name, hidden: true %>
+        <%= f.text_field :name, class: "form-control" %>
+      </td>
+      <td>
+        <%= f.label :list_id, hidden: true %>
+        <% if @list %>
+        <%= select("task", "list_id", List.where("id = ?", @list.id).collect { |l| [l.name, l.id] }, {include_blank: false}, {class: "form-control"})%>
+        <% else %>
+        <%= select("task", "list_id", List.where("user_id = ?", @user.id).collect { |l| [l.name, l.id ] }, {include_blank: false}, {class: "form-control"})%>
+        <% end %>
+      </td>
+      <td>
+        <%= f.label :tags, hidden: true %>
+        <%= f.text_field :tag, class: "form-control" %>
+      </td>
+      <td class="form-inline">
+        <%= f.label :Done %>
+        <%= f.check_box :isDone, class: "checkbox" %>
+        <%= f.label :Star %>
+        <%= f.check_box :isStarred, class: "checkbox" %>
+        <%= f.label :Archive %>
+        <%= f.check_box :isArchived, class: "checkbox" %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<%= f.submit class: "btn btn-primary" %>
+
+</div>
+
 <% end %>

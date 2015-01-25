@@ -21,6 +21,7 @@ class TagsController < ApplicationController
 
   # GET /tags/new
   def new
+    redirect_to tags_path
     @tag = Tag.new
   end
 

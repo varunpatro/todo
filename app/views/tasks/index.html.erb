@@ -2,12 +2,12 @@
 <h1>All Tasks</h1>
 
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>List</th>
-      <th>Options</th>
+      <th class="lead">Name</th>
+      <th class="lead">List</th>
+      <th class="lead">Options</th>
     </tr>
   </thead>
 
@@ -32,4 +32,6 @@
 
 <br>
 
-<%= render 'form' %>
+<%= field_set_tag "New Task" do %>
+  <%= render 'form' %>
+<% end %>

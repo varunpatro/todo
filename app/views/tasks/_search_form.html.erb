@@ -1,28 +1,27 @@
-<%= form_tag('/tasks/search_results', method: "get", id: "search_form") do %>
+<%= form_tag('/tasks/search_results', method: "get", id: "search_form", class: "form") do %>
 
-  <div class="field">
-    <%= label_tag(:tagSearch, "Search Tasks with Tag") %>
+<table class="table">
+  <div class="form-inline">
+    <%= label_tag(:tagSearch, "Search Tags?") %>
     <%= check_box_tag(:tagSearch) %>  
 
     <%= label_tag(:tag, "Tag:") %>
-    <%= text_field_tag(:tag) %>
+    <%= text_field_tag(:tag) %>    
   </div>
 
-  <div class="field">
-    <%= label_tag(:isStarred, "Search Starred Tasks") %>
-    <%= check_box_tag(:isStarred) %>  
-  </div>
+  <br>
 
-  <div class="field">
-    <%= label_tag(:isArchived, "Search Archived Tasks") %>
-    <%= check_box_tag(:isArchived) %>  
-  </div>
-
-  <div class="field">
-    <%= label_tag(:isDone, "Search Done Tasks") %>
+  <div class="form-group">
+    <%= label_tag(:isStarred, "Starred") %>
+    <%= check_box_tag(:isStarred) %>
+  
+    <%= label_tag(:isArchived, "Archived") %>
+    <%= check_box_tag(:isArchived) %><br>
+  
+    <%= label_tag(:isDone, "Done") %>
     <%= check_box_tag(:isDone) %>
   </div>
 
 
-  <%= button_tag("Search", type: 'submit', id: 'search_button') %>
+  <%= button_tag("Search", type: 'submit', id: 'search_button', class: "btn btn-primary") %>
 <% end %>
