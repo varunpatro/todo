@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :lists
-
-  resources :tags
+  
 
   get 'users/login' => 'users#login'
 
@@ -16,8 +14,16 @@ Rails.application.routes.draw do
 
   get 'tasks/search_results' => 'tasks#search_results'
 
+  get 'users/signup' => 'users#new'
+
 
   resources :tasks
+
+  resources :lists
+
+  resources :tags
+
+  resources :users
 
 
 

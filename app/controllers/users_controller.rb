@@ -56,7 +56,16 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+
     @user = User.new(user_params)
+
+    # if (user_params["password"] != params[:repass])
+    #   respond_to do |format|
+    #     format.html { render :new }
+    #     format.json { render json: @user.errors, status: :unprocessable_entity }
+    #   end
+    #   return
+    # end
 
     respond_to do |format|
       if @user.save
@@ -101,6 +110,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :username, :password)
+      params.require(:user).permit(:name, :username, :password, :password_confirmation)
     end
 end

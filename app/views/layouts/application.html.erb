@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<p id="notice"><%= notice %></p>
 <% if session[:logged_in?] %>
 <p>Welcome <%= session[:user_name] %>!</p>
 <% end %>
