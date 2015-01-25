@@ -45,8 +45,7 @@ class TasksController < ApplicationController
       if @task.save
         create_multiple_tags(task_params["tag"], @task.id)
 
-        # format.html { redirect_to @task, notice: 'Task was successfully created.' }
-        format.html { redirect_to @task, notice: task_params }
+        format.html { redirect_to @task.list, notice: "Task successfully created" }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }

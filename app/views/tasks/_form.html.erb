@@ -14,12 +14,12 @@
   
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :list_id %><br>
+    <%= f.label :list_id %>
     <% if @list %>
       <%= select("task", "list_id", List.where("id = ?", @list.id).collect { |l| [l.name, l.id] }) %>
     <% else %>
@@ -28,7 +28,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :tag %><br>
+    <%= f.label :tag %>
     <%= f.text_field :tag %>
   </div>
 
