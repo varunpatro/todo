@@ -12,6 +12,9 @@
     <tr>
       <th class="lead">Tasks</th>
       <th class="lead">Options</th>
+      <th class="lead">Tags</th>
+      <th class="lead">Status</th>
+
     </tr>
   </thead>
 
@@ -19,9 +22,25 @@
     <% @list.tasks.each do |task| %>
       <tr>
         <td><%= task.name %></td>
-        <td><%= link_to ' SHOW TASKS', task, class: "btn btn-primary" %>
+        <td>
         <%= link_to ' EDIT', edit_task_path(task), class: "btn btn-warning" %>
         <%= link_to ' DELETE', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td>
+          <% task.tags.each do |t| %>
+          <%= link_to t.name, tag_path(t), class: "lead" %>
+          <% end %>
+        </td>
+        <td>
+          <% if task.isStarred %>
+          <span class="glyphicon glyphicon-star"></span>
+          <% end %>
+          <% if task.isDone %>
+          <span class="glyphicon glyphicon-ok"></span>
+          <% end %>
+          <% if task.isArchived %>
+          <span class="glyphicon glyphicon-inbox"></span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

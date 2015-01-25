@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.where(isArchived: false)
     @task = Task.new
     @lists = List.all
   end
@@ -23,6 +23,7 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    redirect_to @task.list
   end
 
   # GET /tasks/new
@@ -63,7 +64,7 @@ class TasksController < ApplicationController
       if @task.update(task_params)
         create_multiple_tags(task_params["tag"], @task.id)
 
-        format.html { redirect_to @task, notice: 'Task was successfully updated.' }
+        format.html { redirect_to @task.list, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
       else
         format.html { render :edit }
