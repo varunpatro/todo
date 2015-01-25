@@ -12,9 +12,10 @@
     <% @lists.each do |list| %>
       <tr>
         <td><%= list.name %></td>
-        <td><%= link_to 'Show', list %></td>
-        <td><%= link_to 'Edit', edit_list_path(list) %></td>
-        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to ' SHOW', list, class: "btn btn-primary glyphicon glyphicon-menu-hamburger" %></td>
+        <td><%= link_to ' EDIT', edit_list_path(list), class: "btn btn-warning glyphicon glyphicon-pencil" %></td>
+        <a class="btn" href="">Link</a>
+        <td><%= link_to ' DELETE', list, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger glyphicon glyphicon-remove" %></td>
       </tr>
     <% end %>
   </tbody>
