@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<title>Todo</title>
-
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
@@ -11,26 +10,29 @@
 	</head>
 	<body>
 		<div class="container">
-			<p id="notice"><%= notice %></p>
-			<div class="container"><div class="navbar">
-				<div class="navbar-inner">
-					<ul class="nav nav-tabs">
-						<% if session[:logged_in?] %>
-						<li><a href=<%= lists_path %>>Lists</a></li>
-						<li><a href=<%= tasks_path %>>Tasks</a></li>
-						<li><a href=<%= tasks_search_path %>>Search Tasks</a></li>
-						<li><a href=<%= tags_path %>>Tags</a></li>
-						<li class="pull-right"><a href=<%= users_logout_path %>>Logout</a></li>
-						<li class="pull-right"><a href=<%= users_path %>>Welcome <%= session[:user_name] %>!</a></li>
-						<% else  %>
-						<li class="pull-right"><a href=<%= users_login_path %>>Login<span class="glyphicon glyphicon-login"></span></a></li>
-						<li class="pull-right"><a href=<%= users_signup_path %>>Sign Up</a></li>
-						<% end %>
-					</ul>
+			<div class="container">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<ul class="nav nav-tabs">
+							<% if session[:logged_in?] %>
+							<li><a href=<%= lists_path %>>Lists</a></li>
+							<li><a href=<%= tasks_path %>>Tasks</a></li>
+							<li><a href=<%= tasks_search_path %>>Search Tasks</a></li>
+							<li><a href=<%= tags_path %>>Tags</a></li>
+							<li class="pull-right"><a href=<%= users_logout_path %>>Logout</a></li>
+							<li class="pull-right"><a href=<%= users_path %>>Welcome <%= session[:user_name] %>!</a></li>
+							<% else  %>
+							<li class="pull-right"><a href=<%= users_login_path %>>Login<span class="glyphicon glyphicon-login"></span></a></li>
+							<li class="pull-right"><a href=<%= users_signup_path %>>Sign Up</a></li>
+							<% end %>
+						</ul>
+					</div>
 				</div>
 			</div>
+			<% if notice %>
+			<p id="notice" class="alert alert-success"><%= notice %></p><br>
+			<% end %>
+			<%= yield %>
 		</div>
-		<%= yield %>
-	</div>
-</body>
+	</body>
 </html>

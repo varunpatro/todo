@@ -25,14 +25,10 @@
     <% else %>
       <%= select("task", "list_id", List.where("user_id = ?", @user.id).collect { |l| [l.name, l.id ] }) %>
     <% end %>
-  <!-- </div>
 
-  <div class="field"> -->
     <%= f.label :tag %>
     <%= f.text_field :tag %>
-  <!-- </div>
 
-  <div class="field"> -->
     <%= f.label :Done %>
     <%= f.check_box :isDone %>
 
@@ -41,10 +37,8 @@
 
     <%= f.label :Archive %>
     <%= f.check_box :isArchived %>
-  <!-- </div>
-
-  <div class="actions"> -->
-    <%= f.submit %>
+  
+    <%= f.submit class: "btn btn-default" %>
   </div>
 
 <% end %>
