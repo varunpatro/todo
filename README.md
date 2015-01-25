@@ -4,7 +4,7 @@
 ##Matric No: 	 A0131729E
 
 
-Application hosted at https://vpatro.me:3000/
+Application hosted at http://vpatro.me:3000/
 
 ### Final Write-Up
 See [Write-Up.pdf](FINAL Write-Up.pdf)
