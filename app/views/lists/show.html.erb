@@ -27,7 +27,7 @@
         <%= link_to ' DELETE', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         <td>
           <% task.tags.each do |t| %>
-          <%= link_to t.name, tag_path(t), class: "lead" %>
+          <%= link_to t.name+',', tag_path(t), class: "lead" %>
           <% end %>
         </td>
         <td>
