@@ -1,27 +1,67 @@
 <%= form_tag('/tasks/search_results', method: "get", id: "search_form", class: "form") do %>
 
+<h2>Search Tasks</h2>
+<br>
 <table class="table">
-  <div class="form-inline">
-    <%= label_tag(:tagSearch, "Search Tags?") %>
-    <%= check_box_tag(:tagSearch) %>  
+  <col width="300">
+  <thead>
+  <th></th>
+  <th></th>
+  <th width="45%"></th>
 
-    <%= label_tag(:tag, "Tag:") %>
-    <%= text_field_tag(:tag) %>    
-  </div>
+  </thead>
+  <tbody>
+  <tr>
+    <td class="">
+      <%= label_tag(:tagSearch, "Search tags?") %>
+    </td>
+    <td class="">
+      <%= check_box_tag(:tagSearch) %>
+    </td>
+  </tr>
+  <tr>
+    <td class="">
+      <%= label_tag(:tag, "Tags") %>
+    </td>
+    <td class="">
+      <%= text_field_tag(:tag, nil, class: "form-control", disabled: true) %>
+    </td>
+  </tr>
+  <tr>
+    <td class="">
+       &nbsp;
+    </td>
+    <td>
+      
+    </td>
+  </tr>
+  <tr>
+    <td class="">
+      <%= label_tag(:isStarred, "Starred") %>
+    </td>
+    <td>
+      <%= check_box_tag(:isStarred) %>
+    </td>
+  </tr>
+  <tr>
+    <td class="">
+      <%= label_tag(:isArchived, "Archived") %>
+    </td>
+    <td>
+      <%= check_box_tag(:isArchived) %>
+    </td>
+  </tr>
+  <tr>
+    <td class="">
+      <%= label_tag(:isDone, "Done") %>
+    </td>
+    <td>
+      <%= check_box_tag(:isDone) %>
+    </td>
+  </tr>
 
-  <br>
+  <tr><td><%= button_tag("Search", type: 'submit', id: 'search_button', class: "btn btn-primary") %></td></tr>
+  </tbody>  
 
-  <div class="form-group">
-    <%= label_tag(:isStarred, "Starred") %>
-    <%= check_box_tag(:isStarred) %>
-  
-    <%= label_tag(:isArchived, "Archived") %>
-    <%= check_box_tag(:isArchived) %><br>
-  
-    <%= label_tag(:isDone, "Done") %>
-    <%= check_box_tag(:isDone) %>
-  </div>
-
-
-  <%= button_tag("Search", type: 'submit', id: 'search_button', class: "btn btn-primary") %>
+  </table>
 <% end %>

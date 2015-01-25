@@ -5,6 +5,14 @@
 
 ready = undefined
 ready = ->
+
+  tag_search = ->
+    if $("#tagSearch").is(":checked")
+      $("#tag").prop "disabled", false
+    else
+      $("#tag").prop "disabled", true
+  $("#tagSearch").click tag_search
+
   $("#search_form").submit (e) ->
     formURL = undefined
     postData = undefined
@@ -29,6 +37,8 @@ ready = ->
 
     e.preventDefault()
     return
+
+
 
   return
 

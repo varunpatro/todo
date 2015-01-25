@@ -1,26 +1,28 @@
+<h2>Login to access your tasks or <a href="/users/signup/"><u>Sign Up</u></a></h2>
 
+<br>
 
 <%= form_for :user do |f| %>
 
-  <div class="field">
+  <div class="form-inline form-group">
     <%= f.label :Username %><br>
-    <%= f.text_field :username %>
+    <%= f.text_field :username, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-inline form-group">
     <%= f.label :Password %><br>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, class: "form-control" %>
   </div>
 
 
-  <div class="actions">
-    <%= f.submit(:Login) %>
+  <div class="actions form-group">
+    <%= f.submit(:Login, class: "btn btn-primary") %>
   </div>
+
+  <br>
 
   <div class="demo">
-    <p>For a demo, you can login using username 'testuser' and password 'testpass'</p>
+    <p class="lead">For a demo, you can login using username 'testuser' and password 'testpass'</p>
   </div>
-
-
 
 <% end %>
