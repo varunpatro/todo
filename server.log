@@ -1,0 +1,230 @@
+=> Booting WEBrick
+=> Rails 4.2.0 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+
+
+Started GET "/" for ::1 at 2015-01-25 15:26:40 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mList Load (1.1ms)[0m  [1mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered lists/_form.html.erb (26.9ms)
+  Rendered lists/index.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 287ms (Views: 236.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/assets/application-800bda695d51183bf646ad022f9ca22a.css?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/assets/application-d894ee97cf20026bdfe272c630fdae56.js?body=1" for ::1 at 2015-01-25 15:26:41 +0800
+
+
+Started GET "/lists/8" for ::1 at 2015-01-25 15:27:15 +0800
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mTask Load (0.9ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?  [["list_id", 8]]
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists" WHERE (id = 8)[0m
+  Rendered tasks/_form.html.erb (10.1ms)
+  Rendered lists/show.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 124ms (Views: 111.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/lists/8" for ::1 at 2015-01-25 15:27:39 +0800
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?  [["list_id", 8]]
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists" WHERE (id = 8)[0m
+  Rendered tasks/_form.html.erb (5.2ms)
+  Rendered lists/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 87ms (Views: 84.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/assets/application-800bda695d51183bf646ad022f9ca22a.css?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/assets/application-d894ee97cf20026bdfe272c630fdae56.js?body=1" for ::1 at 2015-01-25 15:27:39 +0800
+
+
+Started GET "/lists/8" for ::1 at 2015-01-25 15:27:46 +0800
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?  [["list_id", 8]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT "lists".* FROM "lists" WHERE (id = 8)[0m
+  Rendered tasks/_form.html.erb (5.4ms)
+  Rendered lists/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 93ms (Views: 90.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/assets/application-800bda695d51183bf646ad022f9ca22a.css?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/assets/application-d894ee97cf20026bdfe272c630fdae56.js?body=1" for ::1 at 2015-01-25 15:27:46 +0800
+
+
+Started GET "/lists/8" for ::1 at 2015-01-25 15:28:03 +0800
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?  [["list_id", 8]]
+  [1m[36mList Load (0.3ms)[0m  [1mSELECT "lists".* FROM "lists" WHERE (id = 8)[0m
+  Rendered tasks/_form.html.erb (5.9ms)
+  Rendered lists/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 81ms (Views: 79.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 15:28:03 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:28:03 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:28:03 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:28:03 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 15:28:03 +0800
+
+
+Started GET "/assets/application-800bda695d51183bf646ad022f9ca22a.css?body=1" for ::1 at 2015-01-25 15:28:03 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 15:28:03 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 15:28:03 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 15:28:03 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 15:28:03 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 15:28:03 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 15:28:03 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 15:28:03 +0800
+
+
+Started GET "/assets/application-d894ee97cf20026bdfe272c630fdae56.js?body=1" for ::1 at 2015-01-25 15:28:03 +0800
