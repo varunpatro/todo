@@ -35049,3 +35049,2559 @@ Processing by TagsController#show as HTML
   [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 90]]
   Rendered tags/show.html.erb within layouts/application (2.8ms)
 Completed 200 OK in 114ms (Views: 111.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks/search" for ::1 at 2015-01-25 19:15:34 +0800
+Processing by TasksController#search as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered tasks/_search_form.html.erb (0.5ms)
+  Rendered tasks/search.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 141ms (Views: 139.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:15:36 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Unpermitted parameters: utf8, button
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/search_results.html.erb (33.4ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (undefined local variable or method `index' for #<#<Class:0x007fd859667270>:0x007fd85b1942f0>):
+    1: <% render index %>
+  app/views/tasks/search_results.html.erb:1:in `_app_views_tasks_search_results_html_erb___3561920852371302898_70283539689380'
+  app/controllers/tasks_controller.rb:12:in `search_results'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (93.2ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:15:52 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Unpermitted parameters: utf8, button
+  Rendered tasks/search_results.html.erb (10.7ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (Missing partial tasks/_index, application/_index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/varun/workshop/cvwo/todo/app/views"
+):
+    1: <% render 'index' %>
+  app/views/tasks/search_results.html.erb:1:in `_app_views_tasks_search_results_html_erb___3561920852371302898_70283608214780'
+  app/controllers/tasks_controller.rb:12:in `search_results'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (95.2ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:15:55 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Unpermitted parameters: utf8, button
+  Rendered tasks/search_results.html.erb (9.1ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (Missing partial tasks/_index, application/_index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/varun/workshop/cvwo/todo/app/views"
+):
+    1: <% render 'index' %>
+  app/views/tasks/search_results.html.erb:1:in `_app_views_tasks_search_results_html_erb___3561920852371302898_70283608214780'
+  app/controllers/tasks_controller.rb:12:in `search_results'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (77.5ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:16:15 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Unpermitted parameters: utf8, button
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/search_results.html.erb (35.6ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (undefined method `redirect_to' for #<#<Class:0x007fd859667270>:0x007fd859c3ad00>):
+    1: <% redirect_to 'index' %>
+  app/views/tasks/search_results.html.erb:1:in `_app_views_tasks_search_results_html_erb___3561920852371302898_70283597782480'
+  app/controllers/tasks_controller.rb:12:in `search_results'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (83.4ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:16:32 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Unpermitted parameters: utf8, button
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/search_results.html.erb (34.6ms)
+Completed 500 Internal Server Error in 39ms
+
+ActionView::Template::Error (undefined method `redirect_to' for #<#<Class:0x007fd859667270>:0x007fd855c880b8>):
+    1: <% redirect_to tasks_path %>
+  app/views/tasks/search_results.html.erb:1:in `_app_views_tasks_search_results_html_erb___3561920852371302898_70283604060360'
+  app/controllers/tasks_controller.rb:12:in `search_results'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (89.6ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:16:36 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Unpermitted parameters: utf8, button
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/search_results.html.erb (35.7ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (undefined method `redirect_to' for #<#<Class:0x007fd859667270>:0x007fd852d6dd50>):
+    1: <% redirect_to tasks_path, "" %>
+  app/views/tasks/search_results.html.erb:1:in `_app_views_tasks_search_results_html_erb___3561920852371302898_70283598515500'
+  app/controllers/tasks_controller.rb:12:in `search_results'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (10.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (88.9ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:16:40 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Unpermitted parameters: utf8, button
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/search_results.html.erb (36.2ms)
+Completed 500 Internal Server Error in 41ms
+
+ActionView::Template::Error (undefined method `redirect_to' for #<#<Class:0x007fd859667270>:0x007fd855cc65c0>):
+    1: <% redirect_to tasks_path, "asfd" %>
+  app/views/tasks/search_results.html.erb:1:in `_app_views_tasks_search_results_html_erb___3561920852371302898_70283572597040'
+  app/controllers/tasks_controller.rb:12:in `search_results'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (11.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (90.3ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:16:54 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Unpermitted parameters: utf8, button
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/search_results.html.erb (34.3ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (undefined method `redirect_to' for #<#<Class:0x007fd859667270>:0x007fd856d59220>):
+    1: <% redirect_to "", tasks_path %>
+  app/views/tasks/search_results.html.erb:1:in `_app_views_tasks_search_results_html_erb___3561920852371302898_70283573120160'
+  app/controllers/tasks_controller.rb:12:in `search_results'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (83.1ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:17:07 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Unpermitted parameters: utf8, button
+  [1m[35mTask Load (0.4ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/search_results.html.erb (36.2ms)
+Completed 500 Internal Server Error in 41ms
+
+ActionView::Template::Error (undefined method `redirect_to' for #<#<Class:0x007fd859667270>:0x007fd855a423d0>):
+    1: <% redirect_to " s", tasks_path %>
+  app/views/tasks/search_results.html.erb:1:in `_app_views_tasks_search_results_html_erb___3561920852371302898_70283553633740'
+  app/controllers/tasks_controller.rb:12:in `search_results'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (96.7ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:18:12 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Unpermitted parameters: utf8, button
+  [1m[35mTask Load (0.4ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/search_results.html.erb (36.3ms)
+Completed 500 Internal Server Error in 55ms
+
+ActionView::Template::Error (undefined method `redirect_to' for #<#<Class:0x007fd85a989ce0>:0x007fd85976d8e0>):
+    1: <% redirect_to " s", tasks_path %>
+  app/views/tasks/search_results.html.erb:1:in `_app_views_tasks_search_results_html_erb___3561920852371302898_70283553633740'
+  app/controllers/tasks_controller.rb:12:in `search_results'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (11.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (6.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (103.6ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:18:31 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Unpermitted parameters: utf8, button
+  Rendered tasks/search_results.html.erb (0.4ms)
+Redirected to 
+Completed 500 Internal Server Error in 5ms
+
+TypeError (no implicit conversion of Symbol into String):
+  app/controllers/tasks_controller.rb:13:in `search_results'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (87.1ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:18:45 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Unpermitted parameters: utf8, button
+  Rendered tasks/search_results.html.erb (0.1ms)
+Redirected to 
+Completed 500 Internal Server Error in 18ms
+
+NoMethodError (undefined method `delete' for :w:Symbol):
+  app/controllers/tasks_controller.rb:13:in `search_results'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (89.1ms)
+
+
+Started GET "/tasks/" for ::1 at 2015-01-25 19:20:31 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE "tasks"."isArchived" = 'f'
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."isArchived" = 'f'[0m
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mList Load (0.2ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 90]]
+  Rendered tasks/_all_results.html.erb (23.0ms)
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists" WHERE (user_id = 6)
+  Rendered tasks/_form.html.erb (4.8ms)
+  Rendered tasks/index.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 177ms (Views: 146.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:20:31 +0800
+
+
+Started GET "/lists" for ::1 at 2015-01-25 19:20:35 +0800
+Processing by ListsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists" WHERE "lists"."user_id" = ?  [["user_id", 6]]
+  Rendered lists/_form.html.erb (3.0ms)
+  Rendered lists/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 138ms (Views: 136.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks" for ::1 at 2015-01-25 19:20:36 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE "tasks"."isArchived" = 'f'
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."isArchived" = 'f'[0m
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 90]]
+  Rendered tasks/_all_results.html.erb (9.8ms)
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists" WHERE (user_id = 6)
+  Rendered tasks/_form.html.erb (3.6ms)
+  Rendered tasks/index.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 117ms (Views: 114.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/logout" for ::1 at 2015-01-25 19:20:40 +0800
+Processing by UsersController#logout as HTML
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for ::1 at 2015-01-25 19:20:40 +0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 105ms (Views: 105.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/login" for ::1 at 2015-01-25 19:20:50 +0800
+Processing by UsersController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BhrbTSdFRJY3k/5q3pZm+VjjjEEat6V7MQIyRA3w+6MXABT/ObedLMwcOdyKf2pr7bS8Yc9V3Twdg90J/jbKMQ==", "user"=>{"username"=>"testtt", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."username" = ?[0m  [["username", "testtt"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["username", "testtt"]]
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/login" for ::1 at 2015-01-25 19:20:50 +0800
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 174ms (Views: 173.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:20:50 +0800
+
+
+Started POST "/users/login" for ::1 at 2015-01-25 19:21:16 +0800
+Processing by UsersController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YupzZXMUUxhSts7DNpynt7JeWv728mls3MLfDPK3GEZz8LzXbeaKoqk5CXVidaslBwlq3iMQESvwQzBBAXEp1A==", "user"=>{"username"=>"varunpatro", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."username" = ?[0m  [["username", "varunpatro"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["username", "varunpatro"]]
+Redirected to http://localhost:3000/lists
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/lists" for ::1 at 2015-01-25 19:21:16 +0800
+Processing by ListsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists" WHERE "lists"."user_id" = ?  [["user_id", 1]]
+  Rendered lists/_form.html.erb (2.9ms)
+  Rendered lists/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 123ms (Views: 120.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:21:16 +0800
+
+
+Started GET "/tasks" for ::1 at 2015-01-25 19:21:18 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE "tasks"."isArchived" = 'f'
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."isArchived" = 'f'[0m
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 35]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 39]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 40]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 41]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 42]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 43]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 44]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 86]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 88]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered tasks/_all_results.html.erb (22.6ms)
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists" WHERE (user_id = 1)
+  Rendered tasks/_form.html.erb (4.2ms)
+  Rendered tasks/index.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 160ms (Views: 156.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users" for ::1 at 2015-01-25 19:21:31 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/users/1/edit
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2015-01-25 19:21:31 +0800
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/_form.html.erb (4.7ms)
+  Rendered users/edit.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 111ms (Views: 109.7ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-01-25 19:21:38 +0800
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4UfHYbi4aD+9BE/MXdmipjLyahDa5Y08gWuzizMQDkrwXQjTpkqxhUaLiHoJMK40h6VaMA8H9Xut6lzGwNY/2A==", "user"=>{"name"=>"VARUN", "username"=>"varunpatro", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'varunpatro' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "password" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["password", "varunpass"], ["updated_at", "2015-01-25 11:21:38.368522"], ["id", 1]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 14ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/users/1" for ::1 at 2015-01-25 19:21:38 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/lists
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/lists" for ::1 at 2015-01-25 19:21:38 +0800
+Processing by ListsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists" WHERE "lists"."user_id" = ?  [["user_id", 1]]
+  Rendered lists/_form.html.erb (1.7ms)
+  Rendered lists/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 171ms (Views: 168.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:21:38 +0800
+
+
+Started GET "/lists" for ::1 at 2015-01-25 19:23:48 +0800
+Processing by ListsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists" WHERE "lists"."user_id" = ?  [["user_id", 1]]
+  Rendered lists/_form.html.erb (0.9ms)
+  Rendered lists/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 110ms (Views: 94.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:23:48 +0800
+
+
+Started GET "/tasks" for ::1 at 2015-01-25 19:23:50 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE "tasks"."isArchived" = 'f'
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."isArchived" = 'f'[0m
+  [1m[35mList Load (0.2ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 35]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 39]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 40]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 41]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 42]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 43]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 44]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 86]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 88]]
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered tasks/_results.html.erb (68.9ms)
+  [1m[35mList Load (0.3ms)[0m  SELECT "lists".* FROM "lists" WHERE (user_id = 1)
+  Rendered tasks/_form.html.erb (5.9ms)
+  Rendered tasks/index.html.erb within layouts/application (85.0ms)
+Completed 200 OK in 205ms (Views: 189.0ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/tasks" for ::1 at 2015-01-25 19:23:51 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE "tasks"."isArchived" = 'f'
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."isArchived" = 'f'[0m
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 35]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 39]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 40]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 41]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 42]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 43]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 44]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 86]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 88]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered tasks/_results.html.erb (20.5ms)
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists" WHERE (user_id = 1)
+  Rendered tasks/_form.html.erb (4.0ms)
+  Rendered tasks/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 123ms (Views: 120.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tasks" for ::1 at 2015-01-25 19:23:52 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE "tasks"."isArchived" = 'f'
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."isArchived" = 'f'[0m
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 35]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 39]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 40]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 41]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 42]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 43]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 44]]
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 86]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 88]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered tasks/_results.html.erb (21.9ms)
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists" WHERE (user_id = 1)
+  Rendered tasks/_form.html.erb (5.4ms)
+  Rendered tasks/index.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 168ms (Views: 164.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/tasks" for ::1 at 2015-01-25 19:24:11 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (Missing partial tasks/_all_results, application/_all_results with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/varun/workshop/cvwo/todo/app/views"
+):
+    1: 
+    2: <h1>All Tasks</h1>
+    3: 
+    4: <%= render 'all_results' %>
+    5: 
+    6: <%= field_set_tag "New Task" do %>
+    7:   <%= render 'form' %>
+  app/views/tasks/index.html.erb:4:in `_app_views_tasks_index_html_erb___798470559044005355_70283595376020'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (13.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (102.8ms)
+
+
+Started GET "/tasks" for ::1 at 2015-01-25 19:24:18 +0800
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."isArchived" = 'f'[0m
+  [1m[35mTask Load (1.0ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."isArchived" = 'f'
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 35]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 39]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 40]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 41]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 42]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 43]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 44]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 86]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 88]]
+  [1m[35mList Load (0.8ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered tasks/_all_results.html.erb (39.8ms)
+  [1m[36mList Load (0.3ms)[0m  [1mSELECT "lists".* FROM "lists" WHERE (user_id = 1)[0m
+  Rendered tasks/_form.html.erb (9.7ms)
+  Rendered tasks/index.html.erb within layouts/application (57.4ms)
+Completed 200 OK in 245ms (Views: 238.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:24:18 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:24:18 +0800
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:24:18 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:24:18 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:24:18 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:24:18 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:24:18 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:24:19 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:24:19 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:24:19 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:24:19 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:24:19 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:24:19 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:24:19 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:24:19 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:24:19 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:24:19 +0800
+
+
+Started GET "/tasks/search" for ::1 at 2015-01-25 19:24:21 +0800
+Processing by TasksController#search as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tasks/_search_form.html.erb (0.7ms)
+  Rendered tasks/search.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 110ms (Views: 108.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:24:23 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameters: utf8, button
+  Rendered tasks/search_results.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:24:43 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameters: utf8, button
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 35]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 39]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 40]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 41]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 42]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 43]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 44]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 86]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 88]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered tasks/_all_results.html.erb (26.8ms)
+  Rendered tasks/search_results.html.erb (31.0ms)
+Completed 200 OK in 36ms (Views: 31.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:24:47 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameters: utf8, button
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks"
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 35]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 39]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 40]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 41]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 42]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 43]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 44]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 86]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 88]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered tasks/_all_results.html.erb (20.6ms)
+  Rendered tasks/search_results.html.erb (24.6ms)
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=" for ::1 at 2015-01-25 19:24:50 +0800
+Processing by TasksController#search_results as */*
+  Parameters: {"utf8"=>"✓", "tag"=>""}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: utf8
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 35]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 39]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 40]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 41]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 42]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 43]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 44]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 86]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 88]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered tasks/_all_results.html.erb (19.2ms)
+  Rendered tasks/search_results.html.erb (44.7ms)
+Completed 200 OK in 71ms (Views: 67.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/tasks/search" for ::1 at 2015-01-25 19:25:13 +0800
+Processing by TasksController#search as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tasks/_search_form.html.erb (0.6ms)
+  Rendered tasks/search.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 119ms (Views: 117.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:25:13 +0800
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=" for ::1 at 2015-01-25 19:25:15 +0800
+Processing by TasksController#search_results as */*
+  Parameters: {"utf8"=>"✓", "tag"=>""}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: utf8
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 35]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 39]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 40]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 41]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 42]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 43]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 44]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 86]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 88]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered tasks/_all_results.html.erb (18.4ms)
+  Rendered tasks/search_results.html.erb (45.6ms)
+Completed 200 OK in 77ms (Views: 73.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/tasks/35/edit" for ::1 at 2015-01-25 19:25:20 +0800
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 35]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mList Load (0.3ms)[0m  SELECT "lists".* FROM "lists" WHERE (user_id = 1)
+  Rendered tasks/_form.html.erb (6.5ms)
+  Rendered tasks/edit.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 107ms (Views: 103.6ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/tasks/35" for ::1 at 2015-01-25 19:25:23 +0800
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uXlTC1krXs/CyauTvPTQ/WBuzWbOU3gwsJfNL8q8JiyoY5y5R9mHdTlGbCXoHdxv1Tn9RhuxAHecFiJiOXoXvg==", "task"=>{"name"=>"Lol-sup-1", "list_id"=>"1", "tag"=>"nytimes", "isDone"=>"1", "isStarred"=>"0", "isArchived"=>"0"}, "commit"=>"Update Task", "id"=>"35"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 35]]
+  [1m[36mList Load (0.3ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 35]]
+  [1m[36mSQL (1.5ms)[0m  [1mDELETE FROM "tags" WHERE "tags"."id" = ?[0m  [["id", 55]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tasks" SET "isDone" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["isDone", "t"], ["updated_at", "2015-01-25 11:25:23.104149"], ["id", 35]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tags" ("name", "task_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "nytimes"], ["task_id", 35], ["created_at", "2015-01-25 11:25:23.109462"], ["updated_at", "2015-01-25 11:25:23.109462"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/lists/1
+Completed 302 Found in 18ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/lists/1" for ::1 at 2015-01-25 19:25:23 +0800
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?  [["list_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 35]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 39]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 40]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 41]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 42]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 43]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 44]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 86]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 88]]
+  [1m[35mList Load (0.1ms)[0m  SELECT "lists".* FROM "lists" WHERE (id = 1)
+  Rendered tasks/_form.html.erb (4.4ms)
+  Rendered lists/show.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 118ms (Views: 114.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:25:23 +0800
+
+
+Started GET "/fonts/glyphicons-halflings-regular.woff2" for ::1 at 2015-01-25 19:25:23 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.woff2"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (46.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (3.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (195.3ms)
+
+
+Started GET "/fonts/glyphicons-halflings-regular.woff" for ::1 at 2015-01-25 19:25:23 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.woff"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (120.4ms)
+
+
+Started GET "/fonts/glyphicons-halflings-regular.ttf" for ::1 at 2015-01-25 19:25:23 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.ttf"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (112.1ms)
+
+
+Started GET "/tasks/search" for ::1 at 2015-01-25 19:25:27 +0800
+Processing by TasksController#search as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tasks/_search_form.html.erb (0.4ms)
+  Rendered tasks/search.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 104ms (Views: 103.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&button=" for ::1 at 2015-01-25 19:25:28 +0800
+Processing by TasksController#search_results as HTML
+  Parameters: {"utf8"=>"✓", "tag"=>"", "button"=>""}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameters: utf8, button
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 35]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 39]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 40]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 41]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 42]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 43]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 44]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 86]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 88]]
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered tasks/_all_results.html.erb (30.1ms)
+  Rendered tasks/search_results.html.erb (33.3ms)
+Completed 200 OK in 40ms (Views: 35.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=" for ::1 at 2015-01-25 19:25:30 +0800
+Processing by TasksController#search_results as */*
+  Parameters: {"utf8"=>"✓", "tag"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: utf8
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks"
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 35]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 39]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 40]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 41]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 42]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 43]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 44]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 86]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 88]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered tasks/_all_results.html.erb (19.7ms)
+  Rendered tasks/search_results.html.erb (49.7ms)
+Completed 200 OK in 77ms (Views: 72.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/tasks/search" for ::1 at 2015-01-25 19:26:09 +0800
+Processing by TasksController#search as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tasks/_search_form.html.erb (1.3ms)
+  Rendered tasks/search.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 106ms (Views: 104.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:26:09 +0800
+
+
+Started GET "/tasks/search" for ::1 at 2015-01-25 19:26:12 +0800
+Processing by TasksController#search as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tasks/_search_form.html.erb (1.0ms)
+  Rendered tasks/search.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 106ms (Views: 104.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:26:12 +0800
+
+
+Started GET "/tasks/search" for ::1 at 2015-01-25 19:26:27 +0800
+Processing by TasksController#search as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tasks/_search_form.html.erb (1.7ms)
+  Rendered tasks/search.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 95ms (Views: 94.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:26:27 +0800
+
+
+Started GET "/tasks/search" for ::1 at 2015-01-25 19:26:37 +0800
+Processing by TasksController#search as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tasks/_search_form.html.erb (1.7ms)
+  Rendered tasks/search.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 130ms (Views: 128.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:26:37 +0800
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=" for ::1 at 2015-01-25 19:26:47 +0800
+Processing by TasksController#search_results as */*
+  Parameters: {"utf8"=>"✓", "tag"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: utf8
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 35]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 39]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 40]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 41]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 42]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 43]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 44]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 86]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 88]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered tasks/_all_results.html.erb (24.5ms)
+  Rendered tasks/search_results.html.erb (51.9ms)
+Completed 200 OK in 90ms (Views: 86.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/fonts/glyphicons-halflings-regular.woff2" for ::1 at 2015-01-25 19:26:47 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.woff2"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (3.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (130.0ms)
+
+
+Started GET "/fonts/glyphicons-halflings-regular.woff" for ::1 at 2015-01-25 19:26:47 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.woff"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (3.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (111.1ms)
+
+
+Started GET "/fonts/glyphicons-halflings-regular.ttf" for ::1 at 2015-01-25 19:26:48 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.ttf"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (3.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (119.8ms)
+
+
+Started GET "/tasks/search_results?utf8=%E2%9C%93&tag=&isDone=1" for ::1 at 2015-01-25 19:26:51 +0800
+Processing by TasksController#search_results as */*
+  Parameters: {"utf8"=>"✓", "tag"=>"", "isDone"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: utf8
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE "tasks"."isDone" = 't'
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."isDone" = 't'[0m
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 35]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered tasks/_all_results.html.erb (5.0ms)
+  Rendered tasks/search_results.html.erb (27.6ms)
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/lists/1" for ::1 at 2015-01-25 19:26:54 +0800
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?  [["list_id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 35]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 39]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 40]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 41]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 42]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 43]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 44]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 86]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 88]]
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists" WHERE (id = 1)
+  Rendered tasks/_form.html.erb (9.1ms)
+  Rendered lists/show.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 193ms (Views: 189.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/lists/1" for ::1 at 2015-01-25 19:27:28 +0800
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 35]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 39]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 40]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 41]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 42]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 43]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 44]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 86]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 88]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT "lists".* FROM "lists" WHERE (id = 1)[0m
+  Rendered tasks/_form.html.erb (3.9ms)
+  Rendered lists/show.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 122ms (Views: 118.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:27:29 +0800
+
+
+Started GET "/fonts/glyphicons-halflings-regular.woff2" for ::1 at 2015-01-25 19:27:29 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.woff2"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (149.4ms)
+
+
+Started GET "/fonts/glyphicons-halflings-regular.woff" for ::1 at 2015-01-25 19:27:30 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.woff"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (122.0ms)
+
+
+Started GET "/fonts/glyphicons-halflings-regular.ttf" for ::1 at 2015-01-25 19:27:30 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.ttf"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (3.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (136.9ms)
+
+
+Started GET "/lists/1" for ::1 at 2015-01-25 19:27:48 +0800
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."list_id" = ?  [["list_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 35]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 39]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 40]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 41]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 42]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 43]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 44]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 86]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 88]]
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists" WHERE (id = 1)
+  Rendered tasks/_form.html.erb (6.4ms)
+  Rendered lists/show.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 130ms (Views: 126.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:27:48 +0800
+
+
+Started GET "/fonts/glyphicons-halflings-regular.woff2" for ::1 at 2015-01-25 19:27:48 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.woff2"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (232.8ms)
+
+
+Started GET "/fonts/glyphicons-halflings-regular.woff" for ::1 at 2015-01-25 19:27:49 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.woff"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (114.9ms)
+
+
+Started GET "/fonts/glyphicons-halflings-regular.ttf" for ::1 at 2015-01-25 19:27:49 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.ttf"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (107.8ms)
+
+
+Started GET "/tasks" for ::1 at 2015-01-25 19:27:49 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE "tasks"."isArchived" = 'f'
+  [1m[36mTask Load (3.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."isArchived" = 'f'[0m
+  [1m[35mList Load (0.2ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 35]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.2ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 39]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 40]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 41]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 42]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 43]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 44]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 86]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?  [["task_id", 88]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered tasks/_all_results.html.erb (32.0ms)
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists" WHERE (user_id = 1)
+  Rendered tasks/_form.html.erb (4.5ms)
+  Rendered tasks/index.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 176ms (Views: 169.5ms | ActiveRecord: 5.8ms)
+
+
+Started DELETE "/tasks/88" for ::1 at 2015-01-25 19:28:18 +0800
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/jHCzv4V296FcHXxa6hWaL/NrYHSZJbojgCN0Q8rbZ/vKw184OcCZH7/skc/QVr6CpqdoQeG7q+igWKc/O1cDQ==", "id"=>"88"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 88]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 88]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 88]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 8ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/tasks" for ::1 at 2015-01-25 19:28:18 +0800
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."isArchived" = 'f'[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."isArchived" = 'f'
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 35]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 39]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 40]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 41]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 42]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 43]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 44]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."task_id" = ?[0m  [["task_id", 86]]
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered tasks/_all_results.html.erb (23.8ms)
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT "lists".* FROM "lists" WHERE (user_id = 1)[0m
+  Rendered tasks/_form.html.erb (4.6ms)
+  Rendered tasks/index.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 146ms (Views: 142.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/lists-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/bootstrap.min-b45a49e7df08d60def06bb931b1d9281.css?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/application-09b6c440673201e2f308ef2667a066d5.css?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/tags-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/users-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/main-a1d30a61fed3c46c7b9da5a7579e9799.css?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/scaffolds-1cb4b8c47678eab484b68dfa092099d7.css?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/tasks-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/lists-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/bootstrap.min-ae5f126d057868b5ce568fd53456b988.js?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/tags-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/application-0bcd09d0ae79e293baaeed2c018215f1.js?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/tasks-ea619fa73d1e883cb3f54dc8cd9ef500.js?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/assets/users-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:28:18 +0800
+
+
+Started GET "/fonts/glyphicons-halflings-regular.woff2" for ::1 at 2015-01-25 19:28:18 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.woff2"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (3.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (142.7ms)
+
+
+Started GET "/fonts/glyphicons-halflings-regular.woff" for ::1 at 2015-01-25 19:28:18 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.woff"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (2.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (113.3ms)
+
+
+Started GET "/fonts/glyphicons-halflings-regular.ttf" for ::1 at 2015-01-25 19:28:19 +0800
+
+ActionController::RoutingError (No route matches [GET] "/fonts/glyphicons-halflings-regular.ttf"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (4.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (1.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (119.9ms)

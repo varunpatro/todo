@@ -1,54 +1,7 @@
 
 <h1>All Tasks</h1>
 
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th class="lead">Name</th>
-      <th class="lead">List</th>
-      <th class="lead">Options</th>
-      <th class="lead">Tags</th>
-      <th class="lead">Status</th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <% if (@tasks.count > 0) %>
-    <% @tasks.each do |task| %>
-      <% if (task.list.user_id == session[:user_id]) %>
-      <tr>  
-        <td><%= task.name %></td>
-        <td><%= link_to task.list.name, task.list %></td>
-        <td>
-        <%= link_to ' EDIT', edit_task_path(task), class: "btn btn-warning" %>
-        <%= link_to ' DELETE', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-        <td>
-          <% task.tags.each do |t| %>
-          <%= link_to t.name, tag_path(t), class: "lead" %>
-          <% end %>
-        </td>
-        <td>
-          <% if task.isStarred %>
-          <span class="glyphicon glyphicon-star"></span>
-          <% end %>
-          <% if task.isDone %>
-          <span class="glyphicon glyphicon-ok"></span>
-          <% end %>
-          <% if task.isArchived %>
-          <span class="glyphicon glyphicon-inbox"></span>
-          <% end %>
-        </td>
-      </tr>
-      <% end %>
-    <% end %>
-  <% else %>
-    <p>No tasks to show! Make a new one.</p>
-  <% end %>
-  </tbody>
-</table>
-
-<br>
+<%= render 'all_results' %>
 
 <%= field_set_tag "New Task" do %>
   <%= render 'form' %>
