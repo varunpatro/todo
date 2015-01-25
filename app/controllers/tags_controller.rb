@@ -16,7 +16,7 @@ class TagsController < ApplicationController
   # GET /tags/1
   # GET /tags/1.json
   def show
-    @tasks = Tag.where(name: @tag.name)
+    @tags = Tag.where(name: @tag.name)
   end
 
   # GET /tags/new

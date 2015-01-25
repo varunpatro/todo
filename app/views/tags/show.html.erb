@@ -7,10 +7,55 @@
 <p>
   <strong>Tasks:</strong>
 	<ul>
-	  	<% @tasks.each do |t| %>
+	  	<% @tags.each do |t| %>
 	  	<li><%= link_to t.task.name, task_path(t) %></li>
 	  	<% end %>
 	</ul>
 
 </p>
 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="lead">Name</th>
+      <th class="lead">List</th>
+      <th class="lead">Options</th>
+      <th class="lead">Tags</th>
+      <th class="lead">Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% if (@tags.count > 0) %>
+    <% @tags.each do |tag| %>
+      <% if (tag.task.list.user_id == session[:user_id]) %>
+      <tr>  
+        <td class="lead"><%= tag.task.name %></td>
+        <td class="lead"><%= link_to tag.task.list.name, tag.task.list %></td>
+        <td>
+        <%= link_to ' EDIT', edit_task_path(tag.task), class: "btn btn-warning" %>
+        <%= link_to ' DELETE', tag.task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td>
+          <% tag.task.tags.each do |t| %>
+          <%= link_to t.name, tag_path(t), class: "lead" %>
+          <% end %>
+        </td>
+        <td>
+          <% if tag.task.isStarred %>
+          <span class="glyphicon glyphicon-star"></span>
+          <% end %>
+          <% if tag.task.isDone %>
+          <span class="glyphicon glyphicon-ok"></span>
+          <% end %>
+          <% if tag.task.isArchived %>
+          <span class="glyphicon glyphicon-inbox"></span>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    <% end %>
+  <% else %>
+    <p>No tasks to show! Make a new one.</p>
+  <% end %>
+  </tbody>
+</table>
